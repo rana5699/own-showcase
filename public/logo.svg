@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100">
+  <style>
+    /* Set color to currentColor, allowing it to change based on the theme */
+    .logo-text {
+      fill: currentColor;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+  </style>
+  <text class="logo-text" x="10" y="60" font-size="80">RANA</text>
+</svg>
