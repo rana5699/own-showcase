@@ -30,20 +30,24 @@ const ProjectCard = ({
         <Image
           src={project.image}
           alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-t-xl"
+          height={500}
+          width={500}
+
+
+          // layout="fill"
+          // objectFit="cover"
+          // className="rounded-t-xl"
         />
       </motion.div>
 
       {/* Project Content */}
-      <div className="p-6">
+      <div className="p-5">
         <h3 className="text-2xl font-semibold ">{project.title}</h3>
-        <p className=" mt-2">{project.description}</p>
+        <p className="mt-2">{project.description}</p>
 
         {/* View Project Button */}
         {/* View Project Buttons */}
-        <div className="mt-4 flex gap-4">
+        <div className="mt-4 flex flex-wrap gap-4">
           {/* Live Demo */}
           <Link href={project.liveLink} target="_blank">
             <Button> Live Demo 🚀</Button>

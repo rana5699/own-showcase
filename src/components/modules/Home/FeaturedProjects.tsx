@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ProjectCard from "../projects/ProjectCard";
+import TitleContainer from "@/components/utils/TitleContainer";
+import { Button } from "@/components/ui/button";
 
 // Dummy project data (Simulating API Fetch)
 const fetchProjects = () =>
@@ -17,8 +19,9 @@ const fetchProjects = () =>
             title: "Tourist Spot Management",
             description:
               "A system to manage tourist spots with admin and user roles.",
+
             image:
-              "https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png",
+              "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             liveLink: "https://your-live-demo.com/ecommerce",
             repoLink: "https://github.com/yourgithub/ecommerce",
           },
@@ -28,7 +31,7 @@ const fetchProjects = () =>
             description:
               "A booking system for scheduling doctor appointments online.",
             image:
-              "https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png",
+              "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             liveLink: "https://your-live-demo.com/ecommerce",
             repoLink: "https://github.com/yourgithub/ecommerce",
           },
@@ -37,7 +40,7 @@ const fetchProjects = () =>
             title: "E-Commerce Website",
             description: "A modern and fully responsive e-commerce platform.",
             image:
-              "https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png",
+              "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             liveLink: "https://your-live-demo.com/ecommerce",
             repoLink: "https://github.com/yourgithub/ecommerce",
           },
@@ -61,44 +64,44 @@ const FeaturedProjects = () => {
   }, []);
 
   return (
-    <section className="py-5 mb-7">
+    <section className=" ">
       <div className="container mx-auto px-5">
-        {/* Section Title */}
-        <motion.h2
-          className="text-4xl font-bold text-center "
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          data-aos="fade-up"
-        >
-         Projects Showcase
-        </motion.h2>
-        <p className="text-center  mt-4">
-          Explore some of my best projects built with modern web technologies.
-        </p>
+        <TitleContainer
+          title="Feature Projects"
+          description="Explore some of my best projects built with modern web technologies."
+        />
 
         {/* Projects Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center">
           {loading
             ? // Show Skeleton Loader while fetching
               Array.from({ length: 3 }).map((_, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse h-80"
+                  className="rounded-xl animate-pulse h-80"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                >
-                 
-                </motion.div>
+                ></motion.div>
               ))
             : // Show projects when loaded
               projects.map((project, index) => (
                 <div key={index}>
-                <ProjectCard project={project} index={index}/>
+                  <ProjectCard project={project} index={index} />
                 </div>
               ))}
         </div>
+
+        <motion.div
+          className="text-center mt-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          data-aos="fade-up"
+        >
+          <Button>
+            Load More
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

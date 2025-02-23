@@ -2,10 +2,10 @@
 import { useEffect } from "react";
 import FeaturedProjects from "./FeaturedProjects";
 import HeroSection from "./HeroSection";
-import TechStack from "./TechStack";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import TestimonialsSection from "./Testmonial/TestmonialSection";
+import ServicesContainer from "./Services/ServicesContainer";
 
 const Home = () => {
   useEffect(() => {
@@ -32,7 +32,7 @@ const Home = () => {
     <div>
       <HeroSection />
       <FeaturedProjects />
-      <TechStack />
+      <ServicesContainer/>
       <TestimonialsSection/>
     </div>
   );

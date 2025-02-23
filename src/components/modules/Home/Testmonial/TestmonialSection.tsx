@@ -1,36 +1,48 @@
-import TestimonialCard from "./TesmonialCard";
-
+import { TestimonialCard } from "./TestimonialCard";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "John Doe",
-      role: "CEO at Company X",
-      text: "This service has transformed the way we do business. Highly recommend it to everyone!",
-      image: "/path-to-image.jpg", // Provide the image path
+      quote:
+        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      name: "Charles Dickens",
+      title: "A Tale of Two Cities",
     },
     {
-      name: "Jane Smith",
-      role: "Lead Developer at Company Y",
-      text: "An amazing product with excellent support. Our team has been using it daily.",
-      image: "/path-to-image-2.jpg",
+      quote:
+        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+      name: "William Shakespeare",
+      title: "Hamlet",
     },
     {
-      name: "Sam Wilson",
-      role: "Designer at Company Z",
-      text: "The user interface is super clean, and it's incredibly easy to integrate. Worth every penny!",
-      image: "/path-to-image-3.jpg",
+      quote: "All that we see or seem is but a dream within a dream.",
+      name: "Edgar Allan Poe",
+      title: "A Dream Within a Dream",
+    },
+    {
+      quote:
+        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      name: "Jane Austen",
+      title: "Pride and Prejudice",
+    },
+    {
+      quote:
+        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+      name: "Herman Melville",
+      title: "Moby-Dick",
     },
   ];
 
   return (
-    <section className="py-16 ">
+    <section className="px-16 ">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold mb-8">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} index={index} />
-          ))}
+        <h2 className="text-4xl font-semibold ">What Our Clients Say</h2>
+        <div className="my-5  rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
+          <TestimonialCard
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
         </div>
       </div>
     </section>

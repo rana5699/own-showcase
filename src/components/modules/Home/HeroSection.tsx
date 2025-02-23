@@ -1,13 +1,12 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 
 const HeroSection = () => {
   useEffect(() => {
-   
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
@@ -16,7 +15,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative  pb-[110px] pt-[120px]  lg:pt-[150px]">
+    <div className="relative   pt-[120px]  lg:pt-[150px]">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-5/12">
@@ -27,24 +26,28 @@ const HeroSection = () => {
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                data-aos="fade-up" 
+                data-aos="fade-up"
               >
                 Building the Future of Web Development
               </motion.h1>
 
               {/* Framer Motion for fade-in animation */}
               <motion.p
-                className="mb-8 max-w-[480px] text-base text-body-color dark:text-dark-6"
+                className="mb-5 max-w-[480px] text-base text-body-color "
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3 }}
-                data-aos="fade-up" 
+                data-aos="fade-up"
               >
-                As a passionate junior web developer, I specialize in creating responsive and user-friendly websites. With a solid foundation in the MERN stack, Tailwind CSS, and React, I build efficient and visually stunning web applications that help businesses and individuals thrive online.
+                As a passionate junior web developer, I specialize in creating
+                responsive and user-friendly websites. With a solid foundation
+                in the MERN stack, Tailwind CSS, and React, I build efficient
+                and visually stunning web applications that help businesses and
+                individuals thrive online.
               </motion.p>
 
-              <div className="clients pt-16">
-                <h6 className="mb-6 flex items-center text-xs font-normal text-body-color dark:text-dark-6">
+              <div className="clients pt-5">
+                <h6 className="mb-5 flex items-center text-xs font-normal text-body-color ">
                   Featured Projects & Clients
                   <span className="ml-3 inline-block h-px w-8 bg-body-color"></span>
                 </h6>
@@ -101,8 +104,6 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-
-          <div className="hidden px-4 lg:block lg:w-1/12"></div>
 
           {/* Image section with Framer Motion and AOS */}
           <div className="w-full px-4 lg:w-6/12">
