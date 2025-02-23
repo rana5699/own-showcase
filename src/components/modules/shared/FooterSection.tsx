@@ -1,100 +1,78 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
-import { menuItems } from "./MenuItems";
+"use client"
+import { motion } from 'framer-motion'
+import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 const FooterSection = () => {
+  
 
   return (
-    <footer className=" pb-5">
-      <div className="container mx-auto px-6 pb-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center w-full">
-          {/* Logo and Description */}
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            data-aos="fade-up"
-          >
-            <Link
-              href="/"
-              className="text-2xl font-bold text-dark dark:text-white"
-            >
-              <motion.div
-                className="text-2xl font-bold text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #3B82F6, #9333EA)", // Gradient using #3B82F6 and two complementary colors
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                data-aos="fade-up"
-              >
-                RANA
-              </motion.div>
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="bg-gray-900 text-white py-8"
+    >
+      <div className="container mx-auto px-4">
+        {/* Top Section */}
+        <div className="flex flex-wrap justify-between items-center mb-8">
+          {/* Left Side: Links */}
+          <div className="flex flex-wrap gap-6 mb-4 md:mb-0">
+            <Link href="/about" className="hover:text-gray-400">
+              About
             </Link>
-            <p className="mt-2 text-base">
-              We provide innovative solutions that help businesses grow. Get in
-              touch and let&apos;s build something amazing together!
-            </p>
-          </motion.div>
+            <Link href="/privacy-policy" className="hover:text-gray-400">
+              Privacy Policy
+            </Link>
+            <Link href="/licensing" className="hover:text-gray-400">
+              Licensing
+            </Link>
+            <Link href="/contact" className="hover:text-gray-400">
+              Contact
+            </Link>
+          </div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="mt-2 grid grid-cols-2 lg:grid-cols-5">
-              {menuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="text-base hover:text-gray-400"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Social Media Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <h4 className="text-lg font-semibold">Follow Us</h4>
-            <div className="mt-2 flex space-x-6">
-              <Link href="#">
-                <FaFacebook className="text-3xl" />
-              </Link>
-              <Link href="#">
-                <FaTwitter className="text-3xl" />
-              </Link>
-              <Link href="#">
-                <FaGithub className="text-3xl" />
-              </Link>
-            </div>
-          </motion.div>
+          {/* Right Side: Email Subscription */}
+          <div className="flex items-center">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="p-2 rounded-l-lg text-black focus:outline-none"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-r-lg"
+            >
+              Subscribe
+            </button>
+          </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="mt-8 border-t border-gray-700 py-5 text-center">
+        {/* Middle Section: Social Links */}
+        <div className="flex justify-center gap-6 mb-8">
+          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <span className="text-gray-400 hover:text-white">Facebook</span>
+          </Link>
+          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <span className="text-gray-400 hover:text-white">Twitter</span>
+          </Link>
+          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <span className="text-gray-400 hover:text-white">Instagram</span>
+          </Link>
+          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <span className="text-gray-400 hover:text-white">LinkedIn</span>
+          </Link>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="text-center border-t border-gray-700 pt-8">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+            &copy; 2021-2022 Flowbite. All Rights Reserved.
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

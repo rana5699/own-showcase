@@ -2,6 +2,7 @@
 
 import { TProject } from "@/components/types";
 import { Button } from "@/components/ui/button";
+import PrimaryBtn from "@/components/utils/PrimaryBtn";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +16,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className="shadow-lg rounded-xl overflow-hidden"
+      className="rounded-xl border border-b-0"
       transition={{ duration: 0.8, delay: index * 0.2 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -24,7 +25,7 @@ const ProjectCard = ({
       {/* Project Image with Hover Animation */}
       <motion.div
         className="relative h-56 overflow-hidden"
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.5 }}
       >
         <Image
@@ -36,7 +37,7 @@ const ProjectCard = ({
 
           // layout="fill"
           // objectFit="cover"
-          // className="rounded-t-xl"
+          className="rounded-t-sm"
         />
       </motion.div>
 
@@ -45,12 +46,12 @@ const ProjectCard = ({
         <h3 className="text-2xl font-semibold ">{project.title}</h3>
         <p className="mt-2">{project.description}</p>
 
-        {/* View Project Button */}
         {/* View Project Buttons */}
         <div className="mt-4 flex flex-wrap gap-4">
           {/* Live Demo */}
           <Link href={project.liveLink} target="_blank">
-            <Button> Live Demo 🚀</Button>
+            {/* <Button> </Button> */}
+            <PrimaryBtn value="Live Demo 🚀"/>
           </Link>
 
           {/* GitHub Repo */}

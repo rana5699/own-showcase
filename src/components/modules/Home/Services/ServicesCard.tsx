@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
 type TServices = {
   service: {
     title: string;
@@ -13,11 +10,13 @@ type TServices = {
 const ServicesCard = ({ service }: TServices) => {
   return (
     <motion.div
-      className="p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow flex flex-col items-center text-center"
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
+      className=" rounded-xl border border-b-0 flex-shrink-0 px-8 py-6  mx-auto"
+      style={{
+        background:
+          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
       }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       data-aos="fade-up"
     >
       {/* Image Section */}
@@ -36,7 +35,7 @@ const ServicesCard = ({ service }: TServices) => {
         <h3 className="text-xl font-semibold leading-tight mb-2">
           {service.title}
         </h3>
-        <p className="text-sm  leading-relaxed">{service.description}</p>
+        <p className="  leading-relaxed">{service.description}</p>
       </div>
     </motion.div>
   );

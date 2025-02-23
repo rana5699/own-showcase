@@ -1,3 +1,4 @@
+import TitleContainer from "@/components/utils/TitleContainer";
 import { TestimonialCard } from "./TestimonialCard";
 
 const TestimonialsSection = () => {
@@ -36,8 +37,11 @@ const TestimonialsSection = () => {
   return (
     <section className="px-16 ">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold ">What Our Clients Say</h2>
-        <div className="my-5  rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
+        <TitleContainer
+          title="My Clients Say"
+          description="Happy clients says for my services"
+        />
+        <div className="rounded-md flex flex-col antialiased mb-5  items-center justify-center relative overflow-hidden">
           <TestimonialCard
             items={testimonials}
             direction="right"

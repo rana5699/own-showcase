@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import FeaturedProjects from "./FeaturedProjects";
 import HeroSection from "./HeroSection";
@@ -11,12 +11,11 @@ const Home = () => {
   useEffect(() => {
     // Initialize AOS
     AOS.init({
-      duration: 1000, // Set animation duration
-      once: false, // Make it work every time you scroll into view
-      easing: "ease-out-cubic", // Add easing to the animations
+      duration: 1000,
+      once: false,
+      easing: "ease-out-cubic",
     });
 
-    // Reinitialize AOS when component re-renders
     window.addEventListener("scroll", () => {
       AOS.refresh();
     });
@@ -32,8 +31,8 @@ const Home = () => {
     <div>
       <HeroSection />
       <FeaturedProjects />
-      <ServicesContainer/>
-      <TestimonialsSection/>
+      <ServicesContainer />
+      <TestimonialsSection />
     </div>
   );
 };

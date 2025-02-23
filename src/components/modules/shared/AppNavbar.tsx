@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 import { ModeToggle } from "@/components/Theme/ModeToggle";
 import { CrossIcon, MenuIcon } from "lucide-react";
 import MenuItems, { menuItems } from "./MenuItems";
+import { usePathname } from "next/navigation";
+import ActiveNavlink from "./ActiveNavlink";
 
 const AppNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const pathname = usePathname(); // Initialize useRouter to access current route
+  console.log(pathname);
 
   // Toggle the mobile menu
   const toggleMenu = () => {
@@ -16,7 +19,7 @@ const AppNavbar = () => {
   };
 
   return (
-    <header className="bg-white  dark:bg-[#020817] fixed top-0 left-0 w-full z-50 shadow-lg">
+    <header className="bg-white dark:bg-[#020817] fixed top-0 left-0 w-full z-50 shadow-lg">
       <div className="max-w-screen-2xl mx-auto px-4 py-5">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -31,7 +34,7 @@ const AppNavbar = () => {
               className="text-2xl font-bold text-dark dark:text-white"
             >
               <motion.div
-                className="text-5xl font-bold text-transparent bg-clip-text"
+                className="text-3xl md:text-4xl  font-bold text-transparent bg-clip-text"
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, #3B82F6, #9333EA)", // Gradient using #3B82F6 and two complementary colors
@@ -47,8 +50,8 @@ const AppNavbar = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <MenuItems /> {/* is customized menuItems from /src/shared */}
+          <div className="hidden md:flex space-x-4">
+            <MenuItems />
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,9 +70,9 @@ const AppNavbar = () => {
               }`}
             >
               {isMenuOpen ? (
-                <CrossIcon aria-label="Close Menu" /> // Accessible close icon
+                <CrossIcon aria-label="Close Menu" />
               ) : (
-                <MenuIcon aria-label="Open Menu" /> // Accessible hamburger menu icon
+                <MenuIcon aria-label="Open Menu" />
               )}
             </div>
           </motion.button>
@@ -88,20 +91,16 @@ const AppNavbar = () => {
               transition={{ duration: 0.4 + index * 0.1 }}
               data-aos="fade-up"
             >
-              <Link
-                href={menuItem?.href}
-                className="text-base text-body-color dark:text-white hover:text-primary "
-              >
-                {menuItem?.label}
-              </Link>
+              <ActiveNavlink label={menuItem?.label} href={menuItem?.href} />
             </motion.div>
           ))}
 
-          <motion.div className="my-2"
+          <motion.div
+            className="my-2"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            data-aos="fade-up" // Add AOS fade-up effect
+            data-aos="fade-up"
           >
             <ModeToggle />
           </motion.div>

@@ -47,58 +47,31 @@ const ServicesContainer = () => {
   }, []);
 
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-6 lg:px-12">
-        {/* Section Title */}
-        <TitleContainer
-          title="My Professional Services"
-          description="Crafting user-friendly, fully responsive websites that adapt seamlessly across devices for a smooth browsing experience."
-        />
+    <section className="px-5 container mx-auto ">
+      {/* Text Section */}
+      <TitleContainer
+        title="My Professional Services"
+        description="Crafting user-friendly, fully responsive websites that adapt seamlessly across devices for a smooth browsing experience."
+      />
 
-        <div className="flex flex-col md:flex-row h-screen items-center justify-center">
-          <div>
-            <div className="relative w-20 h-20  p-4 rounded-full flex items-center justify-center mb-4">
-              <Image
-                src="/services/e-commerce.svg"
-                alt="title"
-                layout="fill"
-                objectFit="contain"
-                className="rounded-full"
-              />
-            </div>
-
-            {/* Text Section */}
-            <div>
-              <h3 className="text-xl font-semibold leading-tight mb-2">
-                API Development & Integration
-              </h3>
-              <p className="text-sm  leading-relaxed">
-                Developing and integrating APIs to enhance functionality and
-                provide seamless communication between different systems.
-              </p>
-            </div>
-          </div>
-
-          {/* Service Cards */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.2 },
-              },
-            }}
-          >
-            {/* Service Card */}
-            {services.map((service, index) => (
-              <ServicesCard key={index} service={service} />
-            ))}
-          </motion.div>
-        </div>
-      </div>
+      {/* Service Cards */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-center"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
+        {/* Service Card */}
+        {services.map((service, index) => (
+          <ServicesCard key={index} service={service} />
+        ))}
+      </motion.div>
     </section>
   );
 };

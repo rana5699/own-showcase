@@ -81,7 +81,7 @@ export const TestimonialCard = ({
         ref={scrollerRef}
         className={cn(
           " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
+          start && "animate-scroll text-left ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
@@ -99,15 +99,15 @@ export const TestimonialCard = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className=" relative z-20 text-sm leading-[1.6] font-normal">
+              <span className=" relative z-20  leading-[1.6] font-normal ">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className=" text-sm leading-[1.6]  font-normal">
+                  <span className="  leading-[1.6]  font-normal">
                     {item.name}
                   </span>
-                  <span className=" text-sm leading-[1.6]  font-normal">
+                  <span className="  leading-[1.6]  font-normal">
                     {item.title}
                   </span>
                 </span>

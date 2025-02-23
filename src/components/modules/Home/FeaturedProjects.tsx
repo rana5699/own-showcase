@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import ProjectCard from "../projects/ProjectCard";
 import TitleContainer from "@/components/utils/TitleContainer";
 import { Button } from "@/components/ui/button";
+import PrimaryBtn from "@/components/utils/PrimaryBtn";
 
 // Dummy project data (Simulating API Fetch)
 const fetchProjects = () =>
@@ -72,7 +73,7 @@ const FeaturedProjects = () => {
         />
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-center">
           {loading
             ? // Show Skeleton Loader while fetching
               Array.from({ length: 3 }).map((_, index) => (
@@ -98,9 +99,7 @@ const FeaturedProjects = () => {
           animate={{ opacity: 1 }}
           data-aos="fade-up"
         >
-          <Button>
-            Load More
-          </Button>
+          <PrimaryBtn value="Show All"/>
         </motion.div>
       </div>
     </section>

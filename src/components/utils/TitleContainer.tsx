@@ -7,7 +7,7 @@ type TContainerProps = {
 
 const TitleContainer: React.FC<TContainerProps> = ({ title, description }) => {
   return (
-    <motion.div className="max-w-3xl mx-auto px-6 py-7 md:py-10 text-center">
+    <motion.div className="max-w-3xl mx-auto px-6 py-7 md:py-10 text-center ">
       <motion.h2
         className="text-3xl lg:text-5xl  md:text-4xl font-bold"
         initial={{ opacity: 0 }}
